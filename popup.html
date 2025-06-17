@@ -1,49 +1,102 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Widescreen Browsing Settings</title>
-		<script src="popup.js"></script>
-		<link rel="stylesheet" type="text/css" href="popup.css">
-	</head>
-	<body>
-		<div id="url-wrapper">
-			<div id="wb-icon"></div>
-			<div id="current-url">
-				<div id="favicon"></div>
-				<div id="url"></div>
-			</div>
-			<div id="activate-wb">
-				<label>
-					<input type="checkbox" id="option-activate-wb">
-					limit page width
-				</label>
-			</div>
-		</div>
-		<div id="options-wrapper">
-			<div id="options-wrapper-overlay"></div>
-			Set width:
-			<div class="width-setting">
-				<button id="option-decrease-width">-100</button><input type="number" id="option-width-setting" value="1200"><button id="option-increase-width">+100</button>
-			</div>
-			Select used method:
-			<div id="method-selection">
-				<label title="Automatically select the best method for current page and apply custom fixes (if available)">
-					<input type="radio" id="option-method-automatic" value="automatic" name="option-method" checked>
-					automatic
-				</label><br>
-				<label title="Set the width of the &lt;html&gt;-element using absolute positioning">
-					<input type="radio" id="option-method-absolute" value="absolute" name="option-method">
-					absolute
-				</label><br>
-				<label title="Set the width of the &lt;html&gt;-element using relative positioning">
-					<input type="radio" id="option-method-relative" value="relative" name="option-method">
-					relative
-				</label><br>
-				<label title="Use margins of &lt;html&gt;-element to set desired width">
-					<input type="radio" id="option-method-margin" value="margin" name="option-method">
-					margin
-				</label>
-			</div>
-		</div>
-	</body>
+  <head>
+    <title>Widescreen Browsing Settings</title>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+  </head>
+  <body>
+    <div id="url-wrapper">
+      <div id="wb-icon"></div>
+      <div id="current-url">
+        <div id="favicon"></div>
+        <div id="url"></div>
+      </div>
+      <div id="activate-wb">
+        <label>
+          <input type="checkbox" id="option-activate-wb" />
+          limit page width
+        </label>
+      </div>
+      <div id="disable-site">
+        <label>
+          <input type="checkbox" id="option-disable-site" />
+          disable for this site
+        </label>
+        <div id="pattern-selection" style="margin-top: 5px; margin-left: 20px">
+          <label for="option-pattern">Apply to:</label>
+          <select id="option-pattern">
+            <option value="exact">Exact URL</option>
+            <option value="path">Path only</option>
+            <option value="domain">Domain only</option>
+          </select>
+          <div id="path-level-selection" style="margin-top: 5px">
+            <label for="option-path-level">Path level:</label>
+            <select id="option-path-level">
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="options-wrapper">
+      <div id="options-wrapper-overlay"></div>
+      Set width:
+      <div class="width-setting">
+        <button id="option-decrease-width">-100</button
+        ><input type="number" id="option-width-setting" value="1200" /><button
+          id="option-increase-width"
+        >
+          +100
+        </button>
+      </div>
+      Select used method:
+      <div id="method-selection">
+        <label
+          title="Automatically select the best method for current page and apply custom fixes (if available)"
+        >
+          <input
+            type="radio"
+            id="option-method-automatic"
+            value="automatic"
+            name="option-method"
+            checked
+          />
+          automatic </label
+        ><br />
+        <label
+          title="Set the width of the &lt;html&gt;-element using absolute positioning"
+        >
+          <input
+            type="radio"
+            id="option-method-absolute"
+            value="absolute"
+            name="option-method"
+          />
+          absolute </label
+        ><br />
+        <label
+          title="Set the width of the &lt;html&gt;-element using relative positioning"
+        >
+          <input
+            type="radio"
+            id="option-method-relative"
+            value="relative"
+            name="option-method"
+          />
+          relative </label
+        ><br />
+        <label title="Use margins of &lt;html&gt;-element to set desired width">
+          <input
+            type="radio"
+            id="option-method-margin"
+            value="margin"
+            name="option-method"
+          />
+          margin
+        </label>
+      </div>
+    </div>
+  </body>
 </html>
